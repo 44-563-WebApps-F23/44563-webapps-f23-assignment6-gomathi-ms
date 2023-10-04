@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <title>tips page</title>
+<body>
+
+<h2>shows tip amounts</h2>
+
+<form>
+    <label for="Amount">Enter base amount </label>
+    <input type ="number" id="baseamount" name="amount" value=50> <br>
+
+    <label for="Tip">Enter the tip percent </label>
+    <input type ="number" id="tippercent" name="tip" value=15> <br>
+
+    <input type="button" onclick="tips()" value="Show tip">
+</form>
+
+
+<p id="result">Tips result </p>
+
+<script> 
+
+function tips (){
+    var myOutput= ""
+    console.log("Getting form values")
+    baseamount = Number(document.getElementById("baseamount").value)
+    let tippercent = Number( document.getElementById("tippercent").value)
+    
+    for(var i=1;i<6;i++)
+    {   
+        var calculatedtip=(tippercent)/100*baseamount;
+        myOutput+= " "+tippercent+ "% is " +calculatedtip+ "; "
+        tippercent=tippercent+4;
+    }
+    
+    
+        document.getElementById("result").innerHTML = "Tips are:" +  myOutput
+    
+}
+</script>
+
+</body>
+</html> 
