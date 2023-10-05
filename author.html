@@ -36,10 +36,7 @@ function checkalert()
   alert("Sorry, ran out of guesses")
 }
 function checkAuthor (){
-  if(oops>=7)
-  {
-    onclick=checkalert()
-  }
+ 
     console.log("Getting form values")
     name = document.getElementById("authorname").value
     guess = document.getElementById("Guessauthor").value
@@ -56,6 +53,7 @@ function checkAuthor (){
       if(oops>7)
   {
     onclick=checkalert()
+    document.getElementById("incorrectguesses").innerHTML="incorrectguesses"
   }
   else{
       alert('Sorry');  }  
@@ -67,7 +65,7 @@ function checkAuthor (){
 }
 </script>
 <div class="container-fluid">          
-  <img src="NewYork.jpg" width=100 height=100 class="img-fluid" id="image" alt="newyork" , onclick=selectImage()>
+  <img src="NewYork.jpg" width="100" height="100" class="img-fluid" id="image" alt="newyork" , onclick=selectImage()>
 </div>
 <script>
   useImage = 1
@@ -78,7 +76,7 @@ function checkAuthor (){
       case 1:
         document.getElementById("image").src="arizona.jpg";        
         useImage++;
-        break;
+        break; 
       case 2:
         document.getElementById("image").src="omaha.jpg";
         useImage++;
