@@ -20,17 +20,17 @@
 
 <form>
     <input type="radio" id="addition" name="operation" value="sum"   
-      checked >
+       onclick="chooseOp()">
     <label for="Arthimetic_sum">sum</label></br>
   
-    <input type="radio" id="subtraction" name="operation" 
+    <input type="radio" id="subtraction" name="operation" onclick="chooseOp()"
        value="difference">
     <label for="Arthimetic_diff">diff</label></br>
   
-    <input type="radio" id="multiplication" name="operation"   
+    <input type="radio" id="multiplication" name="operation"  onclick="chooseOp()"
        value="product">
     <label for="Arthimetic_mul">mult</label></br>
-    <input type="button" class="btn-secondary" onclick="chooseOp()" value="Arthimetic-Operation">
+  
   </form>
   <p id="resul">Results of operations </p>
 

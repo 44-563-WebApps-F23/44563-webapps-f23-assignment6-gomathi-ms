@@ -2,25 +2,7 @@
 <html>
  <title>cruise page</title>
 <body>
-
-<h2>goes on a cruise</h2>
-
-    <form>
-        <input type="radio" id="rg1_red" name="color" value="red"   
-          checked >
-        <label for="rg1_red">Red</label></br>
-      
-        <input type="radio" id="rg1_blue" name="color" 
-           value="blue">
-        <label for="rg1_blue">Blue</label></br>
-      
-        <input type="radio" id="rg1_green" name="color"   
-           value="green">
-        <label for="rg1_green">Green</label></br>
-
-        <input type="button" onclick="resolveRadio()" value="Get values from radio group">
-      </form>
-      
+<h2>Gomathi Nagiri goes on a cruise</h2>      
       <form>
         <input type="checkbox" id="cabin"   
           value=true >
@@ -36,10 +18,19 @@
 
         <input type="button" onclick="selectCruise()" value="Select a cruise">
       </form>
+      <p id="result">This text will be replaced </p>
+      <form>
+        <input type="text" id="Num" value="days" >
+        <label >Enter the number of days</label></br>
+        <input type="text" id="price"  >
+        <label >Enter price</label></br>      
+
+        <input type="button" onclick="updateCruise()" value="Update the cruise">
+      </form>
       
 
 
-<p id="result">This text will be replaced </p>
+<p id="resul">This text will be replaced </p>
 
 <script> 
 var my_cruise={}
@@ -69,20 +60,15 @@ function selectCruise() {
     document.getElementById("result").innerHTML =JSON. stringify(my_cruise)  ;
 }
 
-function resolveRadio() {
+function updateCruise() {
     console.log("Getting input")
-    redOpt = document.getElementById("rg1_red").checked
-    blueOpt = document.getElementById("rg1_blue").checked
-    greenOpt = document.getElementById("rg1_green").checked
-    confirmed = confirm("Are these the values? "+redOpt+" and "+blueOpt+" and "+greenOpt)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
+   var days = document.getElementById("Num").value
+    price = document.getElementById("price").value   
+        my_cruise.days=days
+        my_cruise.price=price    
+    document.getElementById("resul").innerHTML =JSON. stringify(my_cruise)  ;
 }
+
 
 </script>
 

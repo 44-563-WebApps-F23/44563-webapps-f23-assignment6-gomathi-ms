@@ -4,10 +4,16 @@
     <title>
         LAB 6
     </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+   
+  
  </head>
 <body>
 
 <h2>Author entry Gomathi Nagiri</h2>
+<div id="incorrectguesses" onclick=checkalert()></div>
 
 <form>
     <label for="authorname">The hidden author name </label>
@@ -16,7 +22,7 @@
     <label for="Guessauthor">Guess the author</label>
     <input type ="text" id="Guessauthor" name="author" > <br>
 
-    <input type="button" onclick="checkAuthor()" value="Check the guess">
+    <input type="button"  onclick="checkAuthor()" value="Check the guess">
 </form>
 
 
@@ -25,7 +31,15 @@
 <script> 
 var good=0;
 var oops=0;
+function checkalert()
+{
+  alert("Sorry, ran out of guesses")
+}
 function checkAuthor (){
+  if(oops>=7)
+  {
+    onclick=checkalert()
+  }
     console.log("Getting form values")
     name = document.getElementById("authorname").value
     guess = document.getElementById("Guessauthor").value
@@ -35,12 +49,17 @@ function checkAuthor (){
     {
       alert('You got it right');
       good++;
-      out.innerHTML = "Good  Count Value : " + good + "  Odd Count Value :" + oops
+      out.innerHTML = "Good  Count Value : " + good + "  Oops Count Value :" + oops
     } 
     else
-    {
-      alert('Sorry');    
-      oops++;
+    {      oops++;
+      if(oops>7)
+  {
+    onclick=checkalert()
+  }
+  else{
+      alert('Sorry');  }  
+      
       out.innerHTML = "Good Count Value : " + good + "  Odd  Count Value : " + oops
     }
     
